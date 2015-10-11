@@ -63,6 +63,21 @@ function test3($a) {
 
 var_dump(test3($a));
 
+
+$a = 10; $b = '10';
+
+switch($a === $b) {
+  case (true): 
+    echo "Verdadeiro";
+    break;
+  case (false):
+    echo "Falso";
+    break;
+}
+
+
+
+
 ?>
 
 
