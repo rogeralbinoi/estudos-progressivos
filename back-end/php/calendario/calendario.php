@@ -4,6 +4,9 @@
     <title>Calendário php</title>
     <meta charset="urf-8">
     <style>
+      body {
+        background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/linedpaper.png);
+      }
       h1 {
         font-size: 3em;
         text-align: center;
@@ -30,16 +33,15 @@
   <body lang="pt-br">
     <?php 
       function linha($semana) {
-        echo "<tr>
-                <td>{$semana[0]}</td>
-                <td>{$semana[1]}</td>
-                <td>{$semana[2]}</td>
-                <td>{$semana[3]}</td>
-                <td>{$semana[4]}</td>
-                <td>{$semana[5]}</td>
-                <td>{$semana[6]}</td>
-              </tr>
-             ";
+        echo "<tr>";
+        for ($i = 0; $i <= 6; $i++) {
+          if(isset($semana[$i])) {
+            echo "<td>{$semana[$i]}</td>";
+          } else {
+            echo "<td></td>";
+          }
+        }
+        echo "</tr>";
       }
       function calendario() {
         $dia = 1;
@@ -53,6 +55,7 @@
 
           $dia++;
         } 
+        linha($semana);
       }
     ?>
     <h1><?php echo "Calendário php" ?></h1>
@@ -65,8 +68,8 @@
         <th>Qui</th>
         <th>Sex</th>
         <th>Sab</th>
-        <?php calendario()?>
       </tr>
+        <?php calendario()?>
     </table>
   </body>
 </html>
