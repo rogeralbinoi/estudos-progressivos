@@ -6,4 +6,4 @@ Para rodar o projeto:
 
 Task para compilar os arquivos scss (watch)
 
-```gulp```
+``` gulp ```
