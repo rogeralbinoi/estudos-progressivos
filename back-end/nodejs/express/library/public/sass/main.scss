@@ -1,0 +1,66 @@
+@import '_mixins';
+@import '_vars';
+@import '_globals';
+.application {
+	margin: 1em auto;
+	max-width: 1200px;
+	width: 90%;
+
+	@include element('form') {
+		position: relative;
+		height: 3em;
+
+		@include element('input') {
+			border: 1px solid $bg;
+			position: absolute;
+			display: block;
+			width: 100%;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			font-size: 1.2em;
+			text-indent: 1em;
+			font-family: $font;
+		}
+
+		@include element('button') {
+			background: $bg;
+			border: 1px solid $bg;
+			color: $txt;
+			font-size: 1.1em;
+			padding: .3em 1em;
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			font-family: $font;
+		}
+
+	}
+	@include element('list') {
+		padding: 0;
+		list-style: none;
+		border: 1px solid $bg;
+
+		@include element('item') {
+			padding: 1.5em;
+			&:nth-child(odd) {
+				background: $gray;
+			}
+			&:hover {
+				color: $txt;
+				background: $secondary;
+			}
+		}
+	}
+}
+
+#limpar {
+	background: $bg;
+	border: 1px solid $bg;
+	color: $txt;
+	font-size: 1.1em;
+	padding: .3em 1em;
+	font-family: $font;
+}
